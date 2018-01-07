@@ -1,8 +1,8 @@
 const React = require('react')
 const moment = require('moment')
 
-const { Calendar } = require('../calendar/')
-const { Sidebar } = require('../sidebar/')
+const { Calendar } = require('../Calendar/')
+const { Sidebar } = require('../Sidebar/')
 require('./style.scss')
 
 class App extends React.Component {
