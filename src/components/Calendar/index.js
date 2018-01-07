@@ -8,7 +8,7 @@ const Calendar = props => {
 
   const getStatus = () => ['up', 'down', 'ok', 'anxious'][Math.floor(Math.random() * 4)]
   const blocks = range(days).map(d => {
-    const cn = `block ${ getStatus() }`
+    const cn = `block hover ${ getStatus() }`
     return(
       <div className={ cn } key={ d }>
         <span className='date-label'>{ d + 1 }</span>

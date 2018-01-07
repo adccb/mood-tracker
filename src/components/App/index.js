@@ -18,7 +18,12 @@ class App extends React.Component {
 
     return(
       <React.Fragment>
-        <div className='nav-bar'></div>
+        <div className='nav-bar'>
+          <span className='nav'>
+            <img src='img/hamburger.png' />
+          </span>
+          <h1 className='heading'>mood tracker</h1>
+        </div>
 
         <Sidebar />
 

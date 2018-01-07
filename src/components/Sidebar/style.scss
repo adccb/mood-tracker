@@ -8,5 +8,29 @@ div.sidebar {
   height: calc(100vh - #{ $nav-height });
   border-right: 1px solid #ddd;
   box-sizing: border-box;
-  padding: $top-padding $top-padding / 2;
+  padding: 0;
+
+  & > .colorscheme {
+    border-bottom: 1px #ddd solid;
+    padding: $sidebar-left-padding 0;
+
+    h2 { margin: 0 0 10px 20px; }
+    div.key-container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 5px 20px;
+
+      div.label, span { height: 20px; }
+
+      div.label {
+        width: 20px;
+        display: inline-block;
+        border: 1px #ddd solid;
+        margin-right: 20px;
+      }
+    }
+  }
 }
