@@ -1,8 +1,21 @@
 $nav-height: 100px;
-$content-width: 1050px;
 $sidebar-width: 250px;
 $top-padding: 50px;
 $sidebar-left-padding: 20px;
+
+$breakpoints: (
+  small: 900px,
+  medium: 1200px,
+  large: 1500px,
+  x-large: 1700px
+);
+
+$content-width-by-breakpoint: (
+  small: 560px,
+  medium: 910px,
+  large: 1050px,
+  x-large: 1190px,
+);
 
 $mood-colors: (
   up: #2ecc71,

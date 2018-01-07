@@ -21,15 +21,16 @@ div.sidebar {
       justify-content: flex-start;
       align-items: center;
       box-sizing: border-box;
-      padding: 5px 20px;
+      padding: 2px 20px;
 
-      div.label, span { height: 20px; }
+      div.label, span { height: 15px; }
 
       div.label {
-        width: 20px;
+        border-radius: 50%;
+        width: 15px;
         display: inline-block;
         border: 1px #ddd solid;
-        margin-right: 20px;
+        margin-right: 10px;
       }
     }
   }

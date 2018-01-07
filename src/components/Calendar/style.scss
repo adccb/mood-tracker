@@ -7,23 +7,34 @@ div.content {
   width: calc(100vw - #{ $sidebar-width });
   height: calc(100vh - #{ $nav-height });
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 
   div.inner-content {
     padding-top: $top-padding;
-    width: $content-width;
     box-sizing: border-box;
   }
 }
 
+@each $bp, $size in $breakpoints {
+  @media screen and (min-width: $size) {
+    div.inner-content {
+      width: map_get($content_width_by_breakpoint, $bp);
+    }
+
+    div.block {
+      width: map_get($content_width_by_breakpoint, $bp) / 7;
+      height: map_get($content_width_by_breakpoint, $bp) / 7;
+    }
+  }
+}
+
+
 div.block {
-  height: $content-width / 7;
-  width: $content-width / 7;
   float: left;
   border: 1px solid #ddd;
   box-sizing: border-box;
   padding: 5px 10px;
-  transition: all 0.25s;
+  transition: background-color 0.25s;
 }
 
