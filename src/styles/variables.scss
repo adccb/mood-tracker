@@ -1,0 +1,23 @@
+$nav-height: 30px;
+$brand-color: rgba(22, 160, 133, 1.0);
+$content-width: 1050px;
+$sidebar-width: 250px;
+$top-padding: 50px;
+
+$mood-colors: (
+  up: #2ecc71,
+  ok: #3498db,
+  down: #e74c3c,
+  anxious: #f1c40f,
+);
+
+@each $mood, $color in $mood-colors {
+  .#{ $mood } {
+    background-color: $color;
+
+    &:hover {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+

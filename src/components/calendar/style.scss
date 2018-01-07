@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+div.content {
+  position: absolute;
+  top: $nav-height;
+  left: $sidebar-width;
+  width: calc(100vw - #{ $sidebar-width });
+  height: calc(100vh - #{ $nav-height });
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  div.inner-content {
+    padding-top: $top-padding;
+    width: $content-width;
+    box-sizing: border-box;
+  }
+}
+
+div.block {
+  height: $content-width / 7;
+  width: $content-width / 7;
+  float: left;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  transition: all 0.25s;
+}
+

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Lato');
+
+@import '../../styles/variables.scss';
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.heading {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+}
+
+div.nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: $nav-height;
+  background-color: $brand-color;
+  box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.2);
+}
+

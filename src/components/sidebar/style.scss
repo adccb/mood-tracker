@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+div.sidebar {
+  position: absolute;
+  top: $nav-height;
+  left: 0;
+  width: $sidebar-width;
+  height: calc(100vh - #{ $nav-height });
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: $top-padding $top-padding / 2;
+}
