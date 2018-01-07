@@ -1,20 +1,23 @@
+// @flow
+
 const React = require('react')
 
 const { range } = require('../../util/')
 require('./style.scss')
 
-const Calendar = props => {
-  const { days, monthName, year } = props
+type CalendarProps = {
+  daysInMonth: number,
+  monthName: string,
+  year: number
+}
 
-  const getStatus = () => ['up', 'down', 'ok', 'anxious'][Math.floor(Math.random() * 4)]
-  const blocks = range(days).map(d => {
-    const cn = `block hover ${ getStatus() }`
-    return(
-      <div className={ cn } key={ d }>
+const Calendar = ({ daysInMonth, monthName, year  }: CalendarProps) => {
+  const blocks = range(daysInMonth).map(d => (
+      <div className='block hover' key={ d }>
         <span className='date-label'>{ d + 1 }</span>
       </div>
     )
-  })
+  )
 
   return(
     <div className='content'>

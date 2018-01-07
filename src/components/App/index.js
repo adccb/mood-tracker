@@ -1,37 +1,46 @@
+// @flow
+
 const React = require('react')
+const PropTypes = require('prop-types')
 const moment = require('moment')
 
 const { Calendar } = require('../Calendar/')
 const { Sidebar } = require('../Sidebar/')
+const { Navbar } = require('../Navbar/')
 require('./style.scss')
 
-class App extends React.Component {
-  constructor() {
-    super()
-    this.moment = moment()
+type Props = {}
+
+type State = {
+  daysInMonth: number,
+  monthName: string,
+  stateOptions: Array<string>,
+  year: number
+}
+
+class App extends React.Component<Props, State> {
+  state: State
+
+  constructor(props: Props) {
+    super(props)
+    const m = moment()
+
+    this.state = {
+      daysInMonth: m.daysInMonth(),
+      monthName: m.format('MMM'),
+      stateOptions: ['up', 'ok', 'down', 'anxious'],
+      year: m.format('YYYY')
+    }
   }
 
   render() {
-    const daysInMonth = this.moment.daysInMonth()
-    const monthName = this.moment.format('MMM')
-    const year = this.moment.format('YYYY')
-
     return(
       <React.Fragment>
-        <div className='nav-bar'>
-          <span className='nav'>
-            <img src='img/hamburger.png' />
-          </span>
-          <h1 className='heading'>mood tracker</h1>
-        </div>
+        <Navbar />
 
-        <Sidebar />
+        <Sidebar { ...this.state } />
 
-        <Calendar
-          days={ daysInMonth }
-          monthName={ monthName }
-          year={ year }
-        />
+        <Calendar { ...this.state }/>
       </React.Fragment>
     )
   }
