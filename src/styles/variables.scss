@@ -27,10 +27,6 @@ $mood-colors: (
 @each $mood, $color in $mood-colors {
   .#{ $mood } {
     background-color: $color;
-
-    &.hover:hover {
-      background-color: darken($color, 10%);
-    }
   }
 }
 
