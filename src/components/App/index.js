@@ -14,7 +14,7 @@ const LOCAL_STORAGE_KEY = 'mood-tracker-json'
 type Props = {}
 
 type State = {
-  data: Array<strings>,
+  data: Array<string>,
   daysInMonth: number,
   monthName: string,
   stateOptions: Array<string>,
@@ -39,7 +39,7 @@ class App extends React.Component<Props, State> {
     }
   }
 
-  handleClick(date, state) {
+  handleClick(date: number, state: string) {
     const { data } = this.state
     data[date - 1] = state
 
