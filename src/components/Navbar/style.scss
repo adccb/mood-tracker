@@ -12,7 +12,7 @@ div.nav-bar {
   box-sizing: border-box;
   padding-left: $sidebar-left-padding;
 
-  h1 { font-size: 24px; }
+  h1 { margin: 0; font-size: 24px; }
 
   span.nav {
     width: 50px;
@@ -31,4 +31,17 @@ div.nav-bar {
       width: 35px;
     }
   }
+
+  div.menu {
+    opacity: 0;
+    margin-left: 40px;
+    transition: opacity 0.2s;
+
+    & > * { margin: 0; cursor: pointer; }
+
+    &.shown {
+      opacity: 1;
+    }
+  }
 }
+

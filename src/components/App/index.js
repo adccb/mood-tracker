@@ -39,9 +39,16 @@ class App extends React.Component<Props, State> {
     }
   }
 
-  handleClick(date: number, state: string) {
+  update(date: number, state: string) {
     const { data } = this.state
     data[date - 1] = state
+
+    window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data))
+    this.setState({ data })
+  }
+
+  deleteAll() {
+    const data = []
 
     window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data))
     this.setState({ data })
@@ -50,12 +57,15 @@ class App extends React.Component<Props, State> {
   render() {
     return(
       <React.Fragment>
-        <Navbar { ...this.state } />
+        <Navbar
+          clear={ () => this.deleteAll() }
+          { ...this.state }
+          />
 
         <Sidebar { ...this.state } />
 
         <Calendar
-          update={ (date, state) => this.handleClick(date, state) } 
+          update={ (date, state) => this.update(date, state) }
           { ...this.state }
           />
       </React.Fragment>
