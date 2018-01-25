@@ -3,6 +3,7 @@
 export type ApplicationState = {
   data: Array<string>,
   daysInMonth: number,
+  menuVisible: boolean,
   monthName: string,
   stateOptions: Array<string>,
   year: number
@@ -21,12 +22,10 @@ export type CalendarProps = {
 
 export type NavbarProps = {
   clear: Function,
+  menuExpanded: boolean,
   monthName: string,
+  toggleMenu: Function,
   year: number
-}
-
-export type NavbarState = {
-  menuExpanded: boolean
 }
 
 export type SidebarProps = {
@@ -46,5 +45,9 @@ type ClearAction = {
   data: []
 }
 
-export type Action = SaveAction | ClearAction
+type MenuToggleAction = {
+  type: 'MENUTOGGLE',
+}
+
+export type Action = SaveAction | ClearAction | MenuToggleAction
 

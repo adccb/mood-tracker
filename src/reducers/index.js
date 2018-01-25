@@ -21,6 +21,11 @@ const MoodReducer = (state: ApplicationState = defaultState, action: Action) => 
       return Object.assign({}, state, { data: [] })
     }
 
+    case 'MENUTOGGLE': {
+      console.log('in!')
+      return Object.assign({}, state, { menuVisible: !state.menuVisible })
+    }
+
     default: {
       return state
     }

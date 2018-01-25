@@ -1,36 +1,19 @@
 import React from 'react'
 
 import './style.scss'
-import type { NavbarProps, NavbarState } from '../../types'
+import type { NavbarProps } from '../../types'
 
-export class Navbar extends React.Component<NavbarProps, NavbarState> {
-  constructor(props: NavbarProps) {
-    super(props)
-    this.props = props
-    this.state = {
-      menuExpanded: false
-    }
-  }
+export const Navbar = (props: NavbarProps) => (
+  <div className='nav-bar'>
+    <span className='nav' onClick={ () => props.toggleMenu() }>
+      <img src='img/hamburger.png' />
+    </span>
 
-  handleClick() {
-    const { menuExpanded } = this.state
-    this.setState({ menuExpanded: !menuExpanded })
-  }
+    <h1 className='heading'>{ `${ props.monthName } ${ props.year }` }</h1>
 
-  render() {
-    return (
-      <div className='nav-bar'>
-        <span className='nav' onClick={ () => this.handleClick() }>
-          <img src='img/hamburger.png' />
-        </span>
-
-        <h1 className='heading'>{ `${ this.props.monthName } ${ this.props.year }` }</h1>
-
-        <div className={ `${this.state.menuExpanded ? 'shown' : ''} menu` }>
-          <p className='heading' onClick={ () => this.props.clear() }>clear</p>
-        </div>
-      </div>
-    )
-  }
-}
+    <div className={ `${props.menuVisible ? 'shown' : ''} menu` }>
+      <p className='heading' onClick={ () => props.clear() }>clear</p>
+    </div>
+  </div>
+)
 

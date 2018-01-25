@@ -14,6 +14,7 @@ const data = lsData === null ? new Array(daysInMonth).fill('') : JSON.parse(lsDa
 export const defaultState: ApplicationState = {
   data,
   daysInMonth: daysInMonth,
+  menuVisible: false,
   monthName: m.format('MMM'),
   stateOptions: ['up', 'ok', 'down', 'anxious'],
   year: m.format('YYYY')

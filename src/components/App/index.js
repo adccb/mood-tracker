@@ -13,11 +13,14 @@ import type { ApplicationState, ApplicationProps } from '../../types'
 
 const mapStateToProps = state => state
 const mapDispatchToProps = dispatch => ({
-  'update': data => {
+  update: data => {
     dispatch({ type: 'UPDATE', data })
   },
-  'clear': () => {
+  clear: () => {
     dispatch({ type: 'CLEAR', data: [] })
+  },
+  toggleMenu: () => {
+    dispatch({ type: 'MENUTOGGLE' })
   }
 })
 
@@ -26,17 +29,9 @@ class App extends React.Component<ApplicationProps, ApplicationState> {
   render() {
     return(
       <div>
-        <Navbar
-          clear={ () => this.props.clear() }
-          { ...this.props }
-          />
-
+        <Navbar { ...this.props } />
         <Sidebar { ...this.props } />
-
-        <Calendar
-          update={ (obj) => this.props.update(obj) }
-          { ...this.props }
-          />
+        <Calendar { ...this.props } />
       </div>
     )
   }
