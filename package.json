@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "flow": "flow",
-    "webpack": "webpack"
+    "webpack": "webpack --watch --colors"
   },
+  "repository": "https://github.com/mxtetrachord/mood-tracker",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "flow-bin": "^0.63.1",
     "node-sass": "^4.7.2",
     "prop-types": "^15.6.0",
+    "redux-devtools": "^3.4.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0"
