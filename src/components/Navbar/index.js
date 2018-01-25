@@ -1,18 +1,9 @@
-const React = require('react')
+import React from 'react'
 
-require('./style.scss')
+import './style.scss'
+import type { NavbarProps, NavbarState } from '../../types'
 
-type NavbarProps = {
-  clear: Function,
-  monthName: string,
-  year: number
-}
-
-type NavbarState = {
-  menuExpanded: boolean
-}
-
-class Navbar extends React.Component<NavbarProps, NavbarState> {
+export class Navbar extends React.Component<NavbarProps, NavbarState> {
   constructor(props: NavbarProps) {
     super(props)
     this.props = props
@@ -42,6 +33,4 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
     )
   }
 }
-
-module.exports = { Navbar }
 

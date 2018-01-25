@@ -1,9 +1,17 @@
-const React = require('react')
-const { render } = require('react-dom')
+import React from 'react'
+import { render } from'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import moment from 'moment'
 
-const { App } = require('./components/App/index.js')
+import App from './components/App/'
+import { MoodReducer } from './reducers'
+
+const store = createStore(MoodReducer)
 
 render(
-  <App />,
+  <Provider store={ store }>
+    <App />
+  </Provider>,
   document.getElementById('root')
 )

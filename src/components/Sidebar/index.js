@@ -1,14 +1,11 @@
 // @flow
 
-const React = require('react')
+import React from 'react'
 
-require('./style.scss')
+import './style.scss'
+import type { SidebarProps } from '../../types'
 
-type SidebarProps = {
-  stateOptions: Array<string>
-}
-
-const Sidebar = ({ stateOptions }: SidebarProps) => {
+export const Sidebar = ({ stateOptions }: SidebarProps) => {
   const states = stateOptions.map(state => (
     <div key={ state } className='key-container'>
       <div className={ `${state} label` }></div>
@@ -25,6 +22,4 @@ const Sidebar = ({ stateOptions }: SidebarProps) => {
     </div>
   )
 }
-
-module.exports = { Sidebar }
 
